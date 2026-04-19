@@ -26,7 +26,7 @@ class GameState:
     # Thus, i wrote a class method which internally uses the constructor (cls).
 
     @classmethod
-    def load(cls) -> "GameState":
+    def load(cls) -> "GameState": # what is happening here?
         with open(cls.FILE_NAME, "r") as file:
             data = json.load(file)
 
