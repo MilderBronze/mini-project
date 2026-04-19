@@ -1,6 +1,31 @@
 {
-    "attempts_made": 0,
-    "target_word": "",
-    "history": [],
+    "attempts_made": 6,
+    "target_word": "ADDIO",
+    "history": [
+        {
+            "guess": "GOATY",
+            "feedback": "\ud83e\ude76\ud83d\udc9b\ud83d\udc9b\ud83e\ude76\ud83e\ude76"
+        },
+        {
+            "guess": "COLON",
+            "feedback": "\ud83e\ude76\ud83d\udc9b\ud83e\ude76\ud83e\ude76\ud83e\ude76"
+        },
+        {
+            "guess": "GIVES",
+            "feedback": "\ud83e\ude76\ud83d\udc9b\ud83e\ude76\ud83e\ude76\ud83e\ude76"
+        },
+        {
+            "guess": "JANNS",
+            "feedback": "\ud83e\ude76\ud83d\udc9b\ud83e\ude76\ud83e\ude76\ud83e\ude76"
+        },
+        {
+            "guess": "UNFIT",
+            "feedback": "\ud83e\ude76\ud83e\ude76\ud83e\ude76\ud83d\udc9a\ud83e\ude76"
+        },
+        {
+            "guess": "FOGEY",
+            "feedback": "\ud83e\ude76\ud83d\udc9b\ud83e\ude76\ud83e\ude76\ud83e\ude76"
+        }
+    ],
     "won": false
 }

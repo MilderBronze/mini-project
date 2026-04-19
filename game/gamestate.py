@@ -16,17 +16,17 @@ class GameState:
         self,
         attempts_made: int = 0,
         target_word: str = "",
-        history: list[HistoryItem] | None = None,
+        history: list[HistoryItem] = [],
         won: bool = False
     ):
         self.attempts_made = attempts_made
         self.target_word = target_word
-        self.history = history if history is not None else []
+        self.history = history
         self.won = won
+
     # i could have simply used a constructor over here but use krne ke liye hame values pata honi chahiye jo ham fields me pass krenge.
     # but, idhr toh malum hii nai hai kya values present hai json file mei.. so simply read them first and then constructor use kro. Thats the idea
     # Thus, i wrote a class method which internally uses the constructor (cls).
-
     @classmethod
     def load(cls) -> "GameState": # what is happening here?
         with open(cls.FILE_NAME, "r") as file:
