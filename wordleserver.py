@@ -3,7 +3,7 @@ import argparse
 from game.game import WordleGame
 
 parser = argparse.ArgumentParser()
-subparsers = parser.add_subparsers(dest="common")
+subparsers = parser.add_subparsers(dest="command")
 
 subparsers.add_parser("create")
 
@@ -16,7 +16,7 @@ game = WordleGame()
 
 if args.command == "create":
     result = game.create_new_game()
-    print("create command received")
+    print(result["message"])
     # Later:
     # game = wordleGame()
     # game.create_new_game()
@@ -27,10 +27,9 @@ elif args.command == "guess":
         print(result["feedback"])
     else:
         print(result["message"])
-    print(f"guess command received: {args.word}")
     # later:
     # game = wordleGame()
-    # game.make_guess(args.word.upper())
+    # game.evaluate_guess(args.word.upper())
 
 else:
     print("please provide either 'create' or 'guess <word>'")

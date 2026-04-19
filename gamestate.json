@@ -1,5 +1,23 @@
 {
-    "attempts_made": 0,
-    "history" : [],
-    "target_word" : ""
+    "attempts_made": 4,
+    "target_word": "MURRI",
+    "history": [
+        {
+            "guess": "POPES",
+            "feedback": "\ud83e\ude76\ud83e\ude76\ud83e\ude76\ud83e\ude76\ud83e\ude76"
+        },
+        {
+            "guess": "MISTY",
+            "feedback": "\ud83d\udc9a\ud83d\udc9b\ud83e\ude76\ud83e\ude76\ud83e\ude76"
+        },
+        {
+            "guess": "MURRI",
+            "feedback": "\ud83d\udc9a\ud83d\udc9a\ud83d\udc9a\ud83d\udc9a\ud83d\udc9a"
+        },
+        {
+            "guess": "MURRI",
+            "feedback": "\ud83d\udc9a\ud83d\udc9a\ud83d\udc9a\ud83d\udc9a\ud83d\udc9a"
+        }
+    ],
+    "won": true
 }

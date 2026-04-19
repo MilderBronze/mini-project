@@ -24,18 +24,20 @@ class WordleGame:
         state = GameState(
             attempts_made=0,
             target_word=chosen_word,
-            history=[]
+            history=[],
+            won=False
         )
 
         state.save()
-
+        print(state.target_word)
         return {
             "success": True,
             "message": "New game created successfully"
         }
 
-    def evaluate_guess(self, guess_word):
+    def evaluate_guess(self, guess_word: str):
         """
+        prior to anything, check if the previous guess resulted in guessing the entire word correctly and if the game was already won.
             1. Load GameState
             2. Validate:
                 - game exists
@@ -48,31 +50,42 @@ class WordleGame:
             6. Save GameState
             7. Return either feedback or an error message
         """
+
+        guess_word = guess_word.upper()
         gamestate = GameState.load()
+
+        if gamestate.won:
+            return {
+                "success": False,
+                "message": "Game already completed. Please create a new game."
+            }
+
         # validation
-        if gamestate.attempts_made == 6:
-            print("attempts exceeded")
+        if gamestate.attempts_made >= 6:
             return {
                 "success": False,
                 "message": "maximum attempts exceeded. Start a new game."
             }
 
-        if len(guess_word) != 5:
-            print("word of insufficient length, try again.")
-            return {
-                "success": False,
-                "message": "Word of insufficient length, try again."
-            }
-
         if guess_word not in self.valid_words:
-            print("word not found! Try again with a valid word.")
             return {
                 "success": False,
                 "message": "Word not found! Try again with a valid word."
             }
+
+        if len(guess_word) != 5:
+            return {
+                "success": False,
+                "message": "Word of inaccurate length, try again."
+            }
+
         # yaha tak aaya matlab valid hai.
         # finally evaluation kro. feedback
         feedback = FeedbackGenerator.generate_feedback(gamestate.target_word,guess_word)
+
+        if feedback == "💚💚💚💚💚":
+            gamestate.won = True
+
         gamestate.attempts_made += 1
         gamestate.history.append({
             "guess": guess_word,
